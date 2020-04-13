@@ -1,0 +1,129 @@
+
+<head>
+<title>BATTLESHIP</title>
+<header>
+<h1 style="color:white;"><center>BATTLESHIP</h1>
+</header>
+<style>
+  body {
+  background-image: url('https://image.winudf.com/v2/image/Y29tLmdncy5uYXZ5LmNvbWJhdC5iYXR0bGVzaGlwLndhcl9zY3JlZW5fMl8xNTM5ODA5MjAyXzAyOA/screen-2.jpg?fakeurl=1&type=.jpg');
+  background-repeat: no-repeat;
+   background-size: cover;
+    background-size: 100% 100%;
+
+}
+#t {
+  border-collapse: collapse;
+  width: 400px;
+  }
+
+#t td
+  {
+  border: 1px solid #ddd;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+    }
+#t1 {
+  border-collapse: collapse;
+  width: 400px;
+  }
+
+#t1 td
+  {
+  border: 1px solid #ddd;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+    }
+</style>
+</head>
+<body>
+<table align="center" CELLPADDING="10">
+<tr bgcolor="white"><th id="p1">Player1 : 0</th><th id="p2">Player2 : 0</th>
+</tr><tr><td>
+<table id="t" align="center">
+  <tr><td onclick="myfunction1(0,0,0)"></td><td onclick="myfunction1(0,0,1)"></td><td onclick="myfunction1(0,0,2)"></td><td onclick="myfunction1(0,0,3)"></td><td onclick="myfunction1(0,0,4)"></td><td onclick="myfunction1(0,0,5)"></td></tr>
+  <tr><td onclick="myfunction1(0,1,0)"></td><td onclick="myfunction1(0,1,1)"></td><td onclick="myfunction1(0,1,2)"></td><td onclick="myfunction1(0,1,3)"></td><td onclick="myfunction1(0,1,4)"></td><td onclick="myfunction1(0,1,5)"></td></tr>
+  <tr><td onclick="myfunction1(0,2,0)"></td><td onclick="myfunction1(0,2,1)"></td><td onclick="myfunction1(0,2,2)"></td><td onclick="myfunction1(0,2,3)"></td><td onclick="myfunction1(0,2,4)"></td><td onclick="myfunction1(0,2,5)"></td></tr>
+  <tr><td onclick="myfunction1(0,3,0)"></td><td onclick="myfunction1(0,3,1)"></td><td onclick="myfunction1(0,3,2)"></td><td onclick="myfunction1(0,3,3)"></td><td onclick="myfunction1(0,3,4)"></td><td onclick="myfunction1(0,3,5)"></td></tr>
+  <tr><td onclick="myfunction1(0,4,0)"></td><td onclick="myfunction1(0,4,1)"></td><td onclick="myfunction1(0,4,2)"></td><td onclick="myfunction1(0,4,3)"></td><td onclick="myfunction1(0,4,4)"></td><td onclick="myfunction1(0,4,5)"></td></tr>
+  <tr><td onclick="myfunction1(0,5,0)"></td><td onclick="myfunction1(0,5,1)"></td><td onclick="myfunction1(0,5,2)"></td><td onclick="myfunction1(0,5,3)"></td><td onclick="myfunction1(0,5,4)"></td><td onclick="myfunction1(0,5,5)"></td></tr>
+</table>
+</td><td>
+<table id="t1" align="center">
+  <tr><td onclick="myfunction1(1,0,0)"></td><td onclick="myfunction1(1,0,1)"></td><td onclick="myfunction1(1,0,2)"></td><td onclick="myfunction1(1,0,3)"></td><td onclick="myfunction1(1,0,4)"></td><td onclick="myfunction1(1,0,5)"></td></tr>
+  <tr><td onclick="myfunction1(1,1,0)"></td><td onclick="myfunction1(1,1,1)"></td><td onclick="myfunction1(1,1,2)"></td><td onclick="myfunction1(1,1,3)"></td><td onclick="myfunction1(1,1,4)"></td><td onclick="myfunction1(1,1,5)"></td></tr>
+  <tr><td onclick="myfunction1(1,2,0)"></td><td onclick="myfunction1(1,2,1)"></td><td onclick="myfunction1(1,2,2)"></td><td onclick="myfunction1(1,2,3)"></td><td onclick="myfunction1(1,2,4)"></td><td onclick="myfunction1(1,2,5)"></td></tr>
+  <tr><td onclick="myfunction1(1,3,0)"></td><td onclick="myfunction1(1,3,1)"></td><td onclick="myfunction1(1,3,2)"></td><td onclick="myfunction1(1,3,3)"></td><td onclick="myfunction1(1,3,4)"></td><td onclick="myfunction1(1,3,5)"></td></tr>
+  <tr><td onclick="myfunction1(1,4,0)"></td><td onclick="myfunction1(1,4,1)"></td><td onclick="myfunction1(1,4,2)"></td><td onclick="myfunction1(1,4,3)"></td><td onclick="myfunction1(1,4,4)"></td><td onclick="myfunction1(1,4,5)"></td></tr>
+  <tr><td onclick="myfunction1(1,5,0)"></td><td onclick="myfunction1(1,5,1)"></td><td onclick="myfunction1(1,5,2)"></td><td onclick="myfunction1(1,5,3)"></td><td onclick="myfunction1(1,5,4)"></td><td onclick="myfunction1(1,5,5)"></td></tr>
+</table>
+</td></tr></table>
+<table align="center"><tr><td>
+<tr><td><button onclick="window.location.href = 'js.html'">RESTART</button></td></tr>
+</table>
+<p align="center" id="msg"></p>
+<script>
+var p1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var p2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var score1=0;
+var score2=0;
+var player=0;
+var queryString = decodeURIComponent(window.location.search);
+queryString = queryString.substring(1);
+var queries = queryString.split("&");
+for(var i=0;i<72;i++){
+var queries1 = queries[i].split("=");
+queries[i] = queries1[1];}
+for(i=0;i<36;i++){
+p1[i]=queries[i];}
+for(i=0;i<36;i++){
+p2[i]=queries[i+36];}
+console.log(p1);
+console.log(p2);
+function myfunction1(p,i,j){
+if(player==0&&p==0){
+var t=(i*6)+j;
+if(p1[t]>0){
+p1[t]=-1;
+document.getElementById("t").rows[i].cells[j].setAttribute('background', 'bomb.png');
+score2=score2+1;
+document.getElementById("p2").innerHTML="Player2 : "+score2;
+player=(player+1)%2;
+}
+else if(p1[t]==0){
+p1[t]=-2;
+player=(player+1)%2;
+document.getElementById("t").rows[i].cells[j].setAttribute('background', 'water.JPEG');
+}
+if(score2==6){
+document.getElementById("t1").innerHTML="PLAYER2 WINS";
+document.getElementById("t1").style.color="white";
+document.getElementById("t1").style.fontSize="300%";}
+}
+if(player==1&&p==1){
+var t=(i*6)+j;
+if(p2[t]>0){
+p2[t]=-1;
+document.getElementById("t1").rows[i].cells[j].setAttribute('background', 'bomb.png');
+score1=score1+1;
+document.getElementById("p1").innerHTML="Player1 : "+score1;
+player=(player+1)%2;
+}
+else if(p2[t]==0){
+p2[t]=-2;
+document.getElementById("t1").rows[i].cells[j].setAttribute('background', 'water.JPEG');
+player=(player+1)%2;
+}
+
+}
+if(score1==6){
+document.getElementById("t").innerHTML="PLAYER1 WINS";
+document.getElementById("t").style.color="white";
+document.getElementById("t").style.fontSize="300%";}
+
+}
+
+</script>
+</body>
